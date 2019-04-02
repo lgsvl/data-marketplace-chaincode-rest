@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e -u
+
+export GOPATH=$PWD/gopath
+export PATH=$PWD/gopath/bin:$PATH
+
+echo "Setting up glide"
+go get -v github.com/Masterminds/glide
+
+echo "preparing environment ..."
+mkdir -p $GOPATH/src/github.com/lgsvl
+cp -rf data-marketplace-chaincode-rest $GOPATH/src/github.com/lgsvl
+cd $GOPATH/src/github.com/lgsvl/data-marketplace-chaincode-rest
+
+echo "Running glide up with strip vendor flag"
+glide up --strip-vendor
+
+echo "running tests..."
+./scripts/run_units.sh -p "$@"

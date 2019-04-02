@@ -1,0 +1,23 @@
+package: github.com/lgsvl/data-marketplace-chaincode-rest
+import:
+- package: github.com/gorilla/mux
+  version: v1.6.2
+- package: github.com/hyperledger/fabric-sdk-go
+  version: v1.0.0-alpha4
+  subpackages:
+  - pkg/client/channel
+  - pkg/client/event
+  - pkg/client/msp
+  - pkg/client/resmgmt
+  - pkg/common/errors/retry
+  - pkg/common/providers/msp
+  - pkg/core/config
+  - pkg/fab/ccpackager/gopackager
+  - pkg/fabsdk
+  - third_party/github.com/hyperledger/fabric/common/cauthdsl
+- package: github.com/pkg/errors
+  version: v0.8.0
+- package: github.com/lgsvl/data-marketplace-chaincode
+  version: dev
+  subpackages:
+  - resources
