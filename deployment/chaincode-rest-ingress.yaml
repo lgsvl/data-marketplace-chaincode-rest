@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: chaincode-rest-ingress
+spec:
+  tls:
+  - secretName: testsecret
+  rules:
+   - http:
+      paths:
+      - path: /swagger
+        backend:
+          serviceName: chaincode-rest-service
+          servicePort: 9090
+      - path: /api
+        backend:
+          serviceName: chaincode-rest-service
+          servicePort: 9090

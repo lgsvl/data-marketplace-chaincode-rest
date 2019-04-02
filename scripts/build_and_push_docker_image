@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+scripts=$(dirname $0)
+
+echo "building docker image..."
+docker build -t lgsvl/data-marketplace-chaincode-rest .
+echo "pushing docker image..."
+docker push lgsvl/data-marketplace-chaincode-rest:latest
