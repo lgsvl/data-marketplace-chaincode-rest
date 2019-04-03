@@ -19,7 +19,7 @@ spec:
           claimName: common-pvc
       containers:
       - name: chaincode-rest
-        image: lgsvl/data-marketplace-chaincode-rest:ci
+        image: lgsvlfx/data-marketplace-chaincode-rest:ci
         imagePullPolicy: Always
         env:
         - name: PORT
